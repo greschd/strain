@@ -32,7 +32,7 @@ class Biaxial110(CartesianStrain):
             [0,   0, ezz]
         ])
         pos_displacement_matrices = [
-            (1, -(1 / np.sqrt(2)) * exy * zeta * np.diag([0, 0, 1]))
+            (1, -2 * exy * zeta * np.diag([0, 0, 1]))
         ]
         super(Biaxial110, self).__init__(
             deformation_matrix=deformation_matrix,
@@ -41,15 +41,15 @@ class Biaxial110(CartesianStrain):
 
 class Biaxial111(CartesianStrain):
     def __init__(self, C11, C12, C44, zeta):
-        exx = 2 * C44 / (2 * C44 + C11 + 2 * C12)
-        exy = -(C11 + 2 * C12) / (2 * C44 + C11 + 2 * C12)
+        exx = 4 * C44 / (4 * C44 + C11 + 2 * C12)
+        exy = (-C11 - 2 * C12) / (4 * C44 + C11 + 2 *C12)
         deformation_matrix = np.array([
             [exx, exy, exy],
             [exy, exx, exy],
             [exy, exy, exx]
         ])
         pos_displacement_matrices = [
-            (1, -(1 / np.sqrt(2)) * exy * zeta * np.eye(3))
+            (1, -2 * exy * zeta * np.eye(3))
         ]
         super(Biaxial111, self).__init__(
             deformation_matrix=deformation_matrix,
@@ -67,7 +67,7 @@ class Uniaxial110(CartesianStrain):
             [0,   0, ezz]
         ])
         pos_displacement_matrices = [
-            (1, -(1 / np.sqrt(2)) * exy * zeta * np.diag([0, 0, 1]))
+            (1, -2 * exy * zeta * np.diag([0, 0, 1]))
         ]
         super(Uniaxial110, self).__init__(
             deformation_matrix=deformation_matrix,

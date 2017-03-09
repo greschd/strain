@@ -23,6 +23,4 @@ INITIAL_STRUCTURE = mg.structure.Structure.from_file('samples/POSCAR')
 def test_strain(strain_instance, strength, reference_file, structures_close):
     reference_struc = mg.structure.Structure.from_file(os.path.join('samples', reference_file))
     res_struc = strain_instance.apply(INITIAL_STRUCTURE, strength_multiplier=strength)
-    print(res_struc.frac_coords)
-    print(reference_struc.frac_coords)
     structures_close(res_struc, reference_struc)

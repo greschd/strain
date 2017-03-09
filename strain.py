@@ -28,7 +28,6 @@ class CartesianStrain(Strain):
         new_structure = deformation.apply_to_structure(structure)
         # move positions
         if self.pos_displacement_matrices is not None:
-            print(new_structure.frac_coords)
             for idx, mat in self.pos_displacement_matrices:
                 new_structure.translate_sites(
                     indices=[idx],
@@ -38,5 +37,4 @@ class CartesianStrain(Strain):
                     ),
                     frac_coords=False
                 )
-        print(new_structure.frac_coords)
         return new_structure
