@@ -28,5 +28,5 @@ setup(
         'Topic :: Scientific/Engineering :: Physics'
     ],
     license='GPL',
-    py_modules=['strain', 'strain-III-V']
+    py_modules=['strain', 'strain_III_V']
 )
