@@ -23,11 +23,12 @@ class CartesianStrain(Strain):
 
     def apply(structure, strength_multiplier=1.):
         new_structure = self.deformation.apply_to_structure(structure)
-        # move positions - use original cartesian positions
+        # move positions
         if self.pos_displacement_matrices is not None:
             for idx, mat in self.pos_displacement_matrices:
                 new_structure.translate_sites(
                     indices=[idx],
+                    # use original cartesian positions
                     vector=np.dot(mat, struc.cart_coords[idx]),
                     frac_coords=False
                 )
