@@ -1,3 +1,5 @@
 InSb_qs
 POSCAR
 *.pyc
+*.egg-info
+.cache
