@@ -7,6 +7,15 @@ python_2.7:
         - cd tests
         - py.test
 
+python_3.4:
+    image: python:3.4
+
+    script:
+        - pip install .
+        - pip install pytest
+        - cd tests
+        - py.test
+
 python_3.5:
     image: python:3.5
 
