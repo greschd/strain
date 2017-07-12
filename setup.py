@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import re
+
 from setuptools import setup, find_packages
 
 readme = """Implementation of strains for III-V materials."""
 
+with open('./strain/_version.py', 'r') as f:
+    match_expr = "__version__[^'\"]+(['\"])([^'\"]+)"
+    version = re.search(match_expr, f.read()).group(2).strip()
+
 setup(
     name='strain',
+    version=version,
     author='Dominik Gresch',
     author_email='greschd@gmx.ch',
     install_requires=['numpy', 'pymatgen'],
