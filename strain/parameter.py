@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from .structure.three_five import StrainParameters_III_V
 
 InAs = StrainParameters_III_V(C11=8.329, C12=4.526, C44=3.959, zeta=0.58)
