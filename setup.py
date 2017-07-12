@@ -32,5 +32,5 @@ setup(
         'Topic :: Scientific/Engineering :: Physics'
     ],
     license='GPL',
-    py_modules=find_packages()
+    packages=find_packages()
 )
