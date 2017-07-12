@@ -3,10 +3,7 @@
 #
 # Author:  Dominik Gresch <greschd@gmx.ch>
 
-try:
-    from setuptools import setup
-except:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 readme = """Implementation of strains for III-V materials."""
 
@@ -15,6 +12,7 @@ setup(
     author='Dominik Gresch',
     author_email='greschd@gmx.ch',
     install_requires=['numpy', 'pymatgen'],
+    extras_require={'test': ['pytest']},
     long_description=readme,
     classifiers=[
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -29,5 +27,5 @@ setup(
         'Topic :: Scientific/Engineering :: Physics'
     ],
     license='GPL',
-    py_modules=['strain', 'strain_III_V']
+    py_modules=find_packages()
 )

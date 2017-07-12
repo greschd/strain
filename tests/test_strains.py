@@ -8,7 +8,7 @@ import pytest
 import time
 import pymatgen as mg
 
-import strain_III_V as st
+import strain.structure.III_V as st
 
 INITIAL_STRUCTURE = mg.structure.Structure.from_file('samples/POSCAR')
 

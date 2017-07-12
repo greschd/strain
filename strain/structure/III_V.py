@@ -8,7 +8,8 @@ from __future__ import division, print_function, unicode_literals
 from collections import namedtuple
 
 import numpy as np
-from strain import CartesianStrain
+
+from .. import CartesianStrain
 
 StrainParameters_III_V = namedtuple(
     'StrainParameters_III_V',
