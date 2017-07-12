@@ -1,23 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Author:  Dominik Gresch <greschd@gmx.ch>
 
 import os
 import pytest
 import time
 import pymatgen as mg
 
-import strain.structure.III_V as st
+from strain import parameter
+from strain.structure import three_five
 
 INITIAL_STRUCTURE = mg.structure.Structure.from_file('samples/POSCAR')
 
 @pytest.mark.parametrize(['strain_instance', 'strength', 'reference_file'],
     [
-        (st.Biaxial001(**st.InSb._asdict()), 0.04, 'POSCAR_001_bi_0.04'),
-        (st.Biaxial110(**st.InSb._asdict()), 0.04, 'POSCAR_110_bi_0.04'),
-        (st.Biaxial111(**st.InSb._asdict()), 0.04, 'POSCAR_111_bi_0.04'),
-        (st.Uniaxial110(**st.InSb._asdict()), 0.04, 'POSCAR_100_uni_0.04'),
+        (three_five.Biaxial001(**parameter.InSb), 0.04, 'POSCAR_001_bi_0.04'),
+        (three_five.Biaxial110(**parameter.InSb), 0.04, 'POSCAR_110_bi_0.04'),
+        (three_five.Biaxial111(**parameter.InSb), 0.04, 'POSCAR_111_bi_0.04'),
+        (three_five.Uniaxial110(**parameter.InSb), 0.04, 'POSCAR_100_uni_0.04'),
     ]
 )
 def test_strain(strain_instance, strength, reference_file, structures_close):
