@@ -29,7 +29,6 @@ python_3.6:
     image: python:3.6
 
     script:
-        - pip install .
-        - pip install pytest
+        - pip install .[test]
         - cd tests
         - py.test
