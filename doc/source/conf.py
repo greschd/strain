@@ -47,7 +47,7 @@ intersphinx_mapping = {
 
 todo_include_todos = True
 
-nitpick_ignore = []
+nitpick_ignore = [('py:class', 'pymatgen.Structure'), ('py:class', 'array')]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
