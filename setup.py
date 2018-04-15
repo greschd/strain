@@ -15,6 +15,7 @@ setup(
     name='strain',
     version=version,
     author='Dominik Gresch',
+    url='http://z2pack.ethz.ch/strain',
     author_email='greschd@gmx.ch',
     install_requires=['numpy', 'pymatgen', 'fsc.export'],
     extras_require={
