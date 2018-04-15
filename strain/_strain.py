@@ -3,14 +3,19 @@ import abc
 import copy
 
 import numpy as np
+from fsc.export import export
 import pymatgen as mg
 from pymatgen.analysis.elasticity.strain import Deformation
 
+
+@export
 class Strain(six.with_metaclass(abc.ABCMeta, object)):
     @abc.abstractmethod
     def apply(structure, strength_multiplier=1.):
         pass
 
+
+@export
 class CartesianStrain(Strain):
     def __init__(self, deformation_matrix, pos_displacement_matrices=None):
         self.deformation_matrix = deformation_matrix
@@ -27,9 +32,8 @@ class CartesianStrain(Strain):
                 new_structure.translate_sites(
                     indices=[idx],
                     # use original cartesian positions
-                    vector=strength_multiplier * np.dot(
-                        mat, structure.cart_coords[idx]
-                    ),
+                    vector=strength_multiplier *
+                    np.dot(mat, structure.cart_coords[idx]),
                     frac_coords=False
                 )
         return new_structure

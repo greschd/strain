@@ -16,15 +16,18 @@ setup(
     version=version,
     author='Dominik Gresch',
     author_email='greschd@gmx.ch',
-    install_requires=['numpy', 'pymatgen'],
-    extras_require={'test': ['pytest']},
+    install_requires=['numpy', 'pymatgen', 'fsc.export'],
+    extras_require={
+        'dev': [
+            'pytest', 'yapf==0.21.0', 'prospector', 'sphinx',
+            'sphinx-rtd-theme<0.3'
+        ]
+    },
     long_description=readme,
     classifiers=[
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Natural Language :: English',
-        'Operating System :: Unix',
-        'Development Status :: 3 - Alpha',
-        'Programming Language :: Python',
+        'Natural Language :: English', 'Operating System :: Unix',
+        'Development Status :: 3 - Alpha', 'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
