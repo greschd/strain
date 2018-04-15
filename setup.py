@@ -19,7 +19,7 @@ setup(
     install_requires=['numpy', 'pymatgen', 'fsc.export'],
     extras_require={
         'dev': [
-            'pytest', 'yapf==0.21.0', 'prospector', 'sphinx',
+            'pytest', 'pre-commit', 'yapf==0.21.0', 'prospector', 'sphinx',
             'sphinx-rtd-theme<0.3'
         ]
     },
