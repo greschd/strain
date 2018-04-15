@@ -24,6 +24,7 @@ setup(
             'sphinx-rtd-theme<0.3'
         ]
     },
+    description=readme,
     long_description=readme,
     classifiers=[
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
