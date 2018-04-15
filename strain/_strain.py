@@ -1,10 +1,12 @@
-import six
-import abc
-import copy
+"""
+Defines the base classes for applying strain.
+"""
 
+import abc
+
+import six
 import numpy as np
 from fsc.export import export
-import pymatgen as mg
 from pymatgen.analysis.elasticity.strain import Deformation
 
 
@@ -15,7 +17,7 @@ class Strain(six.with_metaclass(abc.ABCMeta, object)):
     """
 
     @abc.abstractmethod
-    def apply(structure, strength_multiplier=1.):
+    def apply(self, structure, strength_multiplier=1.):
         """
         Apply the strain to a given structure.
 

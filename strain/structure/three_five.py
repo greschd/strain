@@ -4,21 +4,20 @@ This module contains classes for different kinds of strain applied to III-V semi
 
 from __future__ import division, print_function, unicode_literals
 
-import types
-
 import numpy as np
 from fsc.export import export
 
 from .. import CartesianStrain
 
 
-@export
+@export  # pylint: disable=invalid-name
 class StrainParameters_III_V(dict):
     """
     Data class containing the strain parameters for III-V semiconductors.
     """
 
     def __init__(self, C11, C12, C44, zeta):
+        super(StrainParameters_III_V, self).__init__()
         self['C11'] = C11
         self['C12'] = C12
         self['C44'] = C44
@@ -31,7 +30,7 @@ class Biaxial001(CartesianStrain):
     Bi-axial [001] strain for III-V semiconductors.
     """
 
-    def __init__(self, C11, C12, C44, zeta):
+    def __init__(self, C11, C12, C44, zeta):  # pylint: disable=unused-argument
         exx = eyy = 1
         ezz = -2 * C12 / C11
         super(Biaxial001,

@@ -2,6 +2,8 @@
 This module contains strain parameters for given materials.
 """
 
+# pylint: disable=invalid-name
+
 __all__ = ['InAs', 'GaSb', 'InSb']
 
 from .structure.three_five import StrainParameters_III_V
