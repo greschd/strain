@@ -1,9 +1,12 @@
+.. © 2015-2018, ETH Zurich, Institut für Theoretische Physik
+.. Author: Dominik Gresch <greschd@gmx.ch>
+
 .. _home:
 
 strain
 ======
 
-This is a tool to apply strain to crystal structures. 
+This is a tool to apply strain to crystal structures.
 
 .. contents::
     :local:

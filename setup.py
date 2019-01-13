@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# © 2015-2018, ETH Zurich, Institut für Theoretische Physik
+# Author: Dominik Gresch <greschd@gmx.ch>
+
 import re
 
 from setuptools import setup, find_packages
@@ -27,7 +30,7 @@ setup(
     description=readme,
     long_description=readme,
     classifiers=[
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English', 'Operating System :: Unix',
         'Development Status :: 3 - Alpha', 'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
