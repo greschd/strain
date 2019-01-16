@@ -20,7 +20,10 @@ setup(
     author='Dominik Gresch',
     url='http://z2pack.ethz.ch/strain',
     author_email='greschd@gmx.ch',
-    install_requires=['numpy', 'pymatgen', 'fsc.export'],
+    install_requires=[
+        'numpy', 'pymatgen<2019;python_version<"3"',
+        'pymatgen;python_version>="3"', 'fsc.export'
+    ],
     extras_require={
         'dev': [
             'pytest', 'pre-commit', 'yapf==0.21.0', 'prospector', 'sphinx',
