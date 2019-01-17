@@ -26,8 +26,13 @@ setup(
     ],
     extras_require={
         'dev': [
-            'pytest', 'pre-commit', 'yapf==0.21.0', 'prospector', 'sphinx',
-            'sphinx-rtd-theme<0.3'
+            'pytest',
+            'pre-commit',
+            'yapf==0.21.0',
+            'prospector',
+            'sphinx',
+            'sphinx-rtd-theme<0.3',
+            'ipython>=6.2',
         ]
     },
     description=README,
