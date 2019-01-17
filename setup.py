@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# © 2015-2018, ETH Zurich, Institut für Theoretische Physik
+# © 2017-2019, ETH Zurich, Institut für Theoretische Physik
 # Author: Dominik Gresch <greschd@gmx.ch>
 
 import re
@@ -26,8 +26,13 @@ setup(
     ],
     extras_require={
         'dev': [
-            'pytest', 'pre-commit', 'yapf==0.21.0', 'prospector', 'sphinx',
-            'sphinx-rtd-theme<0.3'
+            'pytest',
+            'pre-commit',
+            'yapf==0.21.0',
+            'prospector',
+            'sphinx',
+            'sphinx-rtd-theme<0.3',
+            'ipython>=6.2',
         ]
     },
     description=README,
