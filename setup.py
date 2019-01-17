@@ -8,15 +8,15 @@ import re
 
 from setuptools import setup, find_packages
 
-readme = """Implementation of strains for III-V materials."""
+README = """Implementation of strains for III-V materials."""
 
-with open('./strain/_version.py', 'r') as f:
-    match_expr = "__version__[^'\"]+(['\"])([^'\"]+)"
-    version = re.search(match_expr, f.read()).group(2).strip()
+with open('./strain/__init__.py', 'r') as f:
+    MATCH_EXPR = "__version__[^'\"]+(['\"])([^'\"]+)"
+    VERSION = re.search(MATCH_EXPR, f.read()).group(2).strip()
 
 setup(
     name='strain',
-    version=version,
+    version=VERSION,
     author='Dominik Gresch',
     url='http://z2pack.ethz.ch/strain',
     author_email='greschd@gmx.ch',
@@ -30,8 +30,8 @@ setup(
             'sphinx-rtd-theme<0.3'
         ]
     },
-    description=readme,
-    long_description=readme,
+    description=README,
+    long_description=README,
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English', 'Operating System :: Unix',
