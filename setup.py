@@ -14,6 +14,24 @@ with open('./strain/__init__.py', 'r') as f:
     MATCH_EXPR = "__version__[^'\"]+(['\"])([^'\"]+)"
     VERSION = re.search(MATCH_EXPR, f.read()).group(2).strip()
 
+EXTRAS_REQUIRE = {
+    'test': ['pytest'],
+    'doc': [
+        'sphinx',
+        'sphinx-rtd-theme<0.3',
+        'ipython>=6.2',
+    ],
+    'pre-commit': [
+        'pre-commit',
+        'yapf==0.21.0',
+        'prospector',
+    ]
+}
+EXTRAS_REQUIRE['dev'] = (
+    EXTRAS_REQUIRE['pre-commit'] + EXTRAS_REQUIRE['doc'] +
+    EXTRAS_REQUIRE['test']
+)
+
 setup(
     name='strain',
     version=VERSION,
@@ -24,17 +42,7 @@ setup(
         'numpy', 'pymatgen<2019;python_version<"3"',
         'pymatgen;python_version>="3"', 'fsc.export'
     ],
-    extras_require={
-        'dev': [
-            'pytest',
-            'pre-commit',
-            'yapf==0.21.0',
-            'prospector',
-            'sphinx',
-            'sphinx-rtd-theme<0.3',
-            'ipython>=6.2',
-        ]
-    },
+    extras_require=EXTRAS_REQUIRE,
     description=README,
     long_description=README,
     classifiers=[
