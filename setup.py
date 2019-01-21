@@ -55,6 +55,6 @@ setup(
         'Intended Audience :: Science/Research',
         'Topic :: Scientific/Engineering :: Physics'
     ],
-    license='GPL',
+    license='Apache 2.0',
     packages=find_packages()
 )
